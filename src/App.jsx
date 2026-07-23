@@ -12,6 +12,7 @@ import Contact from './pages/Contact';
 import Apps from './pages/Apps';
 import SignIn from './pages/SignIn';
 import Privacy from './pages/Privacy';
+import Terms from './pages/Terms';
 import Maintenance from './pages/Maintenance';
 import ServerError from './pages/ServerError';
 import NotFound from './pages/NotFound';
@@ -68,6 +69,8 @@ export default function App() {
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/privacy-policy" element={<Privacy />} />
+            <Route path="/terms" element={<Terms />} />
+            <Route path="/terms-of-service" element={<Terms />} />
             <Route path="/maintenance" element={<Maintenance />} />
             <Route path="/500" element={<ServerError />} />
             <Route path="*" element={<NotFound />} />

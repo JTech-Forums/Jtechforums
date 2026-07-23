@@ -211,6 +211,12 @@ export default function About() {
               </p>
             </div>
           </div>
+          <p className="mt-6 border-t border-white/10 pt-4 text-xs text-slate-500">
+            JTech Forums is operated by <span className="text-slate-400">JTech Forums LLC</span>, a New Jersey limited liability
+            company based in Lakewood, NJ. See our{' '}
+            <a href="/terms" className="text-sky-300 hover:text-sky-200">Terms of Service</a> and{' '}
+            <a href="/privacy-policy" className="text-sky-300 hover:text-sky-200">Privacy Policy</a>.
+          </p>
         </div>
       </section>
 

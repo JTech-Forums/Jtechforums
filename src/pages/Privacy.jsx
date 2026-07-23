@@ -2,7 +2,7 @@
   {
     title: '1. Scope and who we are',
     body:
-      'JTech Forums ("JTech", "we", "us") operates jtechforums.org and related services. This policy explains how we collect, use, share, and protect personal information when you use the site and community.',
+      'JTech Forums LLC, a New Jersey limited liability company ("JTech Forums", "JTech", "we", "us"), operates jtechforums.org and related services. This policy explains how we collect, use, share, and protect personal information when you use the site and community.',
   },
   {
     title: '2. Information we collect',
@@ -77,8 +77,15 @@
     body: 'We may update this policy and will refresh the “Last updated” date for significant revisions.',
   },
   {
-    title: '14. Contact',
-    body: 'Questions or requests? Email privacy@jtechforums.org.',
+    title: '14. Governing law',
+    body: 'JTech Forums LLC is organized in New Jersey and operates the Service from New Jersey. This policy is governed by the laws of the State of New Jersey, United States, without regard to conflict-of-laws rules, consistent with our Terms of Service. This does not remove any mandatory data-protection rights you have under the law of your country or state of residence.',
+  },
+  {
+    title: '15. Contact',
+    list: [
+      'Email: privacy@jtechforums.org',
+      'Postal mail: JTech Forums LLC, 12 Shefa Chaim Ave, Lakewood, NJ 08701, United States',
+    ],
   },
 ];
 
@@ -88,7 +95,7 @@ export default function Privacy() {
       <div className="text-center">
         <p className="section-label text-xs uppercase text-sky-200">Policy</p>
         <h1 className="text-5xl font-semibold text-white">Privacy Policy</h1>
-        <p className="mt-3 text-base text-slate-300">Last updated: August 28, 2025</p>
+        <p className="mt-3 text-base text-slate-300">Last updated: July 22, 2026</p>
       </div>
 
       <div className="glass-panel rounded-3xl border border-white/10 p-8">
