@@ -51,7 +51,7 @@ const deriveModerators = (aboutData) => {
   const modIds = new Set(aboutData.about.moderator_ids || []);
   const adminIds = new Set(aboutData.about.admin_ids || []);
   return aboutData.users
-    .filter((u) => modIds.has(u.id) && !adminIds.has(u.id))
+    .filter((u) => modIds.has(u.id) && !adminIds.has(u.id) && u.username?.toLowerCase() !== 'jtechbridgebot')
     .map((u) => ({
       username: u.username,
       role: u.title?.trim() || 'Forum Moderator',
