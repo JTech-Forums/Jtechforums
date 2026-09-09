@@ -36,3 +36,7 @@ dist
 
 # Local tooling logs
 pglite-debug.log
+
+# Local design review
+artifacts/
+vite-local*.log

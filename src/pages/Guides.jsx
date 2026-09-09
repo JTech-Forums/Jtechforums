@@ -1,3 +1,6 @@
+import { Link } from 'react-router-dom';
+import { guideArticles } from '../data/guides';
+import Icon from '../components/Icon';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import SectionHeading from '../components/SectionHeading';
 import PageLoader from '../components/PageLoader';
@@ -100,7 +103,7 @@ export default function Guides() {
     () =>
       topics.map((topic, index) => ({
         ...topic,
-        url: `${forumBase}/t/${topic.slug}/${topic.id}`,
+        url: import.meta.env.VITE_FORUM_USE_MOCK === 'true' ? `${forumBase}/search?q=${encodeURIComponent(topic.title)}` : `${forumBase}/t/${topic.slug}/${topic.id}`,
         isHero: index === 0,
       })),
     [topics, forumBase]
@@ -110,11 +113,15 @@ export default function Guides() {
     <>
       <PageLoader show={!initialLoaded} label="Fetching guides" />
       <div className={`mx-auto max-w-5xl space-y-12 px-6 transition-opacity duration-500 ${initialLoaded ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
+      <section className="local-guides">
+        <div className="local-page-title"><span className="eyebrow">THE COMMUNITY KNOWLEDGE BASE</span><h1>Step-by-Step Guides</h1><p>Detailed walkthroughs for every device and setup. From flip phones to smartphones, we've got you covered.</p></div>
+        {guideArticles.map(guide => <Link className="local-guide" key={guide.slug} to={`/guides/${guide.slug}`}><div><h2>{guide.title}</h2><p>{guide.summary}</p></div><Icon/></Link>)}
+      </section>
       <section className="pb-16 pt-12">
         <SectionHeading
           label="Guides"
           title="Latest walkthroughs from the JTech forum"
-          description="We pull the newest topics from the Guides category in real-time. Scroll to keep loading fresh signal."
+          description={import.meta.env.VITE_FORUM_USE_MOCK === 'true' ? 'Sample forum topics for the local preview. The guides above are available to read in full.' : 'We pull the newest topics from the Guides category in real-time. Scroll to keep loading fresh signal.'}
           reveal={false}
         />
 

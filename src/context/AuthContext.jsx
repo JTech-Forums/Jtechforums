@@ -11,6 +11,7 @@ export function AuthProvider({ children }) {
   const [profile, setProfile] = useState(null);
 
   useEffect(() => {
+    if (!auth) { setLoading(false); return; }
     let cancelled = false;
 
     const unsubscribe = onAuthStateChanged(auth, (firebaseUser) => {

@@ -1,21 +1,34 @@
-﻿export default function Footer() {
+import { Link } from "react-router-dom";
+import Icon from "./Icon";
+export default function Footer() {
   return (
-    <footer className="border-t border-white/10 bg-slate-950/90">
-      <div className="mx-auto flex max-w-6xl flex-col gap-6 px-6 py-10 text-sm text-slate-400 md:flex-row md:items-center md:justify-between">
+    <footer className="site-footer">
+      <div className="container footer-top">
         <div>
-          <p className="font-semibold text-white">JTech Forums LLC</p>
-          <p className="mt-1 text-slate-400">Community-run tech & filtering intelligence.</p>
-          <p className="mt-1 text-xs text-slate-500">12 Shefa Chaim Ave, Lakewood, NJ 08701, USA</p>
+          <Link to="/" className="brand">
+            <img src="/img/whitelogo.png" alt="JTech" />
+            <span>FORUMS</span>
+          </Link>
+          <p>Community-run tech & filtering intelligence.</p>
         </div>
-        <div className="flex flex-wrap gap-6">
-          <a href="/privacy-policy" className="hover:text-white">Privacy</a>
-          <a href="/terms" className="hover:text-white">Terms</a>
-          <a href="/about" className="hover:text-white">About</a>
-          <a href="/contact" className="hover:text-white">Contact</a>
-        </div>
-        <p>
-          &copy; <span>{new Date().getFullYear()}</span> JTech Forums LLC. Built with love and late-night coffee.
-        </p>
+        <a
+          href="https://forums.jtechforums.org"
+          target="_blank"
+          rel="noreferrer"
+          className="text-link"
+        >
+          See you on the forum <Icon name="external" />
+        </a>
+      </div>
+      <div className="container footer-bottom">
+        <p>&copy; {new Date().getFullYear()} JTech Forums LLC.</p>
+        <nav aria-label="Footer navigation">
+          <Link to="/privacy-policy">Privacy</Link>
+          <Link to="/terms">Terms</Link>
+          <Link to="/about">About</Link>
+          <Link to="/contact">Contact</Link>
+        </nav>
+        <span>Built with love and late-night coffee.</span>
       </div>
     </footer>
   );

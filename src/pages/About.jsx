@@ -103,6 +103,7 @@ export default function About() {
 
   return (
     <Reveal as="div" className="space-y-16 sm:space-y-20" amount={0.1}>
+      {import.meta.env.VITE_FORUM_USE_MOCK === 'true' && <div className="container local-notice">Local preview · community statistics below are sample data.</div>}
       <section className="relative isolate overflow-hidden px-4 pb-14 pt-16 text-center sm:px-6 sm:pb-20">
         <div className="pointer-events-none absolute inset-0 -z-10 opacity-60">
           <img src="/img/phonegrid.png" alt="" className="h-full w-full object-cover opacity-15" referrerPolicy="no-referrer" />

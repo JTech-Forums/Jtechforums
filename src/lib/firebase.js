@@ -14,18 +14,14 @@ const firebaseConfig = {
   measurementId: import.meta.env.VITE_FIREBASE_MEASUREMENT_ID,
 };
 
-// Validate required configuration
-if (!firebaseConfig.apiKey || !firebaseConfig.projectId) {
-  throw new Error('Missing required Firebase configuration. Check environment variables.');
-}
-
-const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
-const firestore = getFirestore(app);
-const storage = getStorage(app);
+export const firebaseConfigured = Boolean(firebaseConfig.apiKey && firebaseConfig.projectId);
+const app = firebaseConfigured ? initializeApp(firebaseConfig) : null;
+const auth = app ? getAuth(app) : null;
+const firestore = app ? getFirestore(app) : null;
+const storage = app ? getStorage(app) : null;
 
 let analytics;
-if (typeof window !== 'undefined') {
+if (app && !import.meta.env.DEV && typeof window !== 'undefined') {
   isSupported()
     .then((supported) => {
       if (supported) {

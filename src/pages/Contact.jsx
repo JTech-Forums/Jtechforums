@@ -72,6 +72,7 @@ export default function Contact() {
 
   async function handleSubmit(event) {
     event.preventDefault();
+    if (import.meta.env.DEV && import.meta.env.VITE_FORUM_USE_MOCK === 'true') { setStatus('error'); setMessage('Messages cannot be sent from this local preview. The contact service is not connected.'); return; }
     setStatus('loading');
     setMessage('');
 
