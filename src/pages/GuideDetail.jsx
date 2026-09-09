@@ -21,6 +21,7 @@ export default function GuideDetail() {
 
   return (
     <div className="mx-auto max-w-4xl space-y-10 px-6 pt-12 pb-16">
+      <Link to="/guides" className="text-link">← All guides</Link>
       <p className="text-sm font-semibold uppercase tracking-[0.35em] text-sky-300">{guide.category}</p>
       <h1 className="text-4xl font-semibold text-white sm:text-5xl">{guide.title}</h1>
       <p className="text-lg text-slate-300">{guide.summary}</p>

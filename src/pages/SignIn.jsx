@@ -60,6 +60,7 @@ export default function SignIn() {
 
   const handleEmailSubmit = async (event) => {
     event.preventDefault();
+    if (!auth) { setMessage('Sign in is unavailable in the local preview. Firebase is not connected.'); return; }
     setMessage('');
     if (isSignup) {
       if (!passwordStrong) {
@@ -90,6 +91,7 @@ export default function SignIn() {
   };
 
   const handleGoogle = async () => {
+    if (!auth) { setMessage('Sign in is unavailable in the local preview. Firebase is not connected.'); return; }
     setMessage('');
     setSubmitting(true);
     try {
@@ -102,6 +104,7 @@ export default function SignIn() {
   };
 
   const handlePasswordReset = async () => {
+    if (!auth) { setMessage('Password reset is unavailable in the local preview. Firebase is not connected.'); return; }
     if (!form.email) {
       setMessage('Enter your email to receive a reset link.');
       return;

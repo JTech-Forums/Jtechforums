@@ -107,12 +107,13 @@ export default function Apps() {
   const [showSubmissionForm, setShowSubmissionForm] = useState(false);
   const [catalogReady, setCatalogReady] = useState(false);
   const [catalogLoading, setCatalogLoading] = useState(true);
+  const [catalogError, setCatalogError] = useState('');
   const [search, setSearch] = useState('');
   const [category, setCategory] = useState('All');
   const [selectedApp, setSelectedApp] = useState(null);
   const searchRef = useRef(null);
 
-  const isAdmin = Boolean(profile?.isAdmin || user?.email === ADMIN_EMAIL);
+  const isAdmin = Boolean(profile?.isAdmin || (user?.email && ADMIN_EMAIL && user.email === ADMIN_EMAIL));
 
   useEffect(() => {
     setCatalogReady(false);
@@ -122,7 +123,7 @@ export default function Apps() {
     const unsubApproved = onSnapshot(approvedQuery, (snapshot) => {
       setApprovedApps(snapshot.docs.map((docSnap) => ({ id: docSnap.id, ...docSnap.data() })));
       setCatalogLoading(false);
-    });
+    }, () => { setCatalogLoading(false); setCatalogError('The app catalog could not load. Please try again later.'); });
 
     let unsubPending = () => {};
     if (isAdmin) {
@@ -520,6 +521,7 @@ export default function Apps() {
   return (
     <>
       <PageLoader show={!catalogReady} label="Loading catalog" />
+      {catalogError && <p role="alert" className="container local-notice">{catalogError}</p>}
       <div
         className={`mx-auto max-w-6xl space-y-10 px-6 py-12 transition-opacity duration-500 ${catalogReady ? 'opacity-100' : 'pointer-events-none opacity-0'}`}
       >
