@@ -1,20 +1,15 @@
 import { useEffect, useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
-import { signOut } from "firebase/auth";
-import { auth } from "../lib/firebase";
-import { useAuth } from "../context/AuthContext";
 import Icon from "./Icon";
 const links = [
   ["Home", "/"],
   ["Guides", "/guides"],
-  ["Apps", "/apps"],
   ["eGate", "/egate"],
   ["About", "/about"],
   ["Contact", "/contact"],
 ];
 export default function Header() {
   const [open, setOpen] = useState(false);
-  const { user } = useAuth();
   const location = useLocation();
   useEffect(() => {
     setOpen(false);
@@ -44,15 +39,6 @@ export default function Header() {
           ))}
         </nav>
         <div className="header-actions">
-          {user ? (
-            <button className="sign-in" onClick={() => signOut(auth)}>
-              Sign out
-            </button>
-          ) : (
-            <Link className="sign-in" to="/signin">
-              Sign in
-            </Link>
-          )}
           <a
             className="button button-small"
             href="https://forums.jtechforums.org"
@@ -83,7 +69,6 @@ export default function Header() {
               {label}
             </NavLink>
           ))}
-          <Link to="/signin">Sign in</Link>
         </nav>
       )}
     </header>
