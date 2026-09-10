@@ -1,3 +1,4 @@
+import { forumLinks } from "../lib/forumLinks";
 ﻿import { useEffect, useMemo, useState } from 'react';
 import SectionHeading from '../components/SectionHeading';
 import GlassCard from '../components/GlassCard';
@@ -22,7 +23,7 @@ const offerings = [
     title: 'Guides & playbooks',
     description:
       'Long-form docs such as the eGate rollout guide, Apps4Flip catalogs, and CAT S22 Verizon walkthroughs—kept current by moderators and community SMEs.',
-    link: { label: 'Browse guides', href: '/guides' },
+    link: { label: 'Browse guides', href: forumLinks.guides },
   },
   {
     icon: 'fa-screwdriver-wrench',

@@ -1,3 +1,4 @@
+import { forumLinks } from "../lib/forumLinks";
 import { Link } from "react-router-dom";
 import Icon from "./Icon";
 export default function Footer() {
@@ -28,7 +29,23 @@ export default function Footer() {
           <Link to="/about">About</Link>
           <Link to="/contact">Contact</Link>
         </nav>
-        <span>Built with love and late-night coffee.</span>
+        <p className="footer-credit">
+          <span>Landing page built by</span>{" "}
+          <span className="footer-credit-partners">
+            <a href={forumLinks.creator} target="_blank" rel="noreferrer">
+              @samsclub
+            </a>
+            <span
+              className="footer-credit-cross"
+              aria-label="in collaboration with"
+            >
+              &times;
+            </span>
+            <a href="https://condvar.com" target="_blank" rel="noreferrer">
+              condvar.com
+            </a>
+          </span>
+        </p>
       </div>
     </footer>
   );

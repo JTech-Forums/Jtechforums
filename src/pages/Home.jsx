@@ -315,7 +315,7 @@ export default function Home() {
         user={user}
         isAdmin={isAdmin}
         onFeedback={() =>
-          user ? setFeedbackModalOpen(true) : navigate("/signin")
+          user ? setFeedbackModalOpen(true) : navigate("/contact")
         }
         onDelete={handleDeleteFeedback}
       />

@@ -3,7 +3,6 @@ import { Link, NavLink, useLocation } from "react-router-dom";
 import Icon from "./Icon";
 const links = [
   ["Home", "/"],
-  ["Guides", "/guides"],
   ["eGate", "/egate"],
   ["About", "/about"],
   ["Contact", "/contact"],
@@ -32,11 +31,23 @@ export default function Header() {
           <span>FORUMS</span>
         </Link>
         <nav className="desktop-nav" aria-label="Main navigation">
-          {links.map(([label, to]) => (
-            <NavLink key={to} to={to} end={to === "/"}>
-              {label}
-            </NavLink>
-          ))}
+          {links.map(([label, to]) =>
+            to.startsWith("https://") ? (
+              <a
+                key={to}
+                href={to}
+                target="_blank"
+                rel="noreferrer"
+                onClick={() => setOpen(false)}
+              >
+                {label}
+              </a>
+            ) : (
+              <NavLink key={to} to={to} end={to === "/"}>
+                {label}
+              </NavLink>
+            ),
+          )}
         </nav>
         <div className="header-actions">
           <a
@@ -64,11 +75,23 @@ export default function Header() {
           className="mobile-nav"
           aria-label="Mobile navigation"
         >
-          {links.map(([label, to]) => (
-            <NavLink key={to} to={to} end={to === "/"}>
-              {label}
-            </NavLink>
-          ))}
+          {links.map(([label, to]) =>
+            to.startsWith("https://") ? (
+              <a
+                key={to}
+                href={to}
+                target="_blank"
+                rel="noreferrer"
+                onClick={() => setOpen(false)}
+              >
+                {label}
+              </a>
+            ) : (
+              <NavLink key={to} to={to} end={to === "/"}>
+                {label}
+              </NavLink>
+            ),
+          )}
         </nav>
       )}
     </header>

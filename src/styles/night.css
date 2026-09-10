@@ -1787,6 +1787,41 @@ em {
   height: auto;
   filter: drop-shadow(0 2px 20px #8cddff12);
 }
+.footer-bottom .footer-credit {
+  font-size: 12px;
+  line-height: 1.7;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: baseline;
+  gap: 5px;
+  color: #8fa3af;
+}
+.footer-credit a {
+  color: #c4e5f5;
+  text-decoration: underline;
+  text-decoration-color: #86bbd440;
+  text-underline-offset: 4px;
+  transition: color .2s, text-decoration-color .2s;
+}
+.footer-credit a:hover {
+  color: #fff;
+  text-decoration-color: #c4e5f5;
+}
+.footer-credit a:focus-visible {
+  outline: 2px solid #a7d8ef;
+  outline-offset: 5px;
+}
+.footer-credit-partners {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 4px;
+  white-space: nowrap;
+}
+.footer-credit-cross {
+  margin-inline: 0;
+  color: #6f9bb4;
+}
 .brand-light-line {
   position: absolute;
   left: 11%;
