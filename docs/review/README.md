@@ -35,3 +35,15 @@ The new section gives first place a large laurel portrait, displays exact scores
 Verified at 1440px and 390px: three champions, five moderators, working avatar images, no horizontal overflow or browser exceptions. Empty and failed leaderboard responses retain an accessible message and the full leaderboard link. Motion respects reduced-motion preferences.
 
 The separate conversation feed was investigated: both the hosted `/api/forum/latest` endpoint and the Cloud Run `/forum/latest` endpoint return HTTP 403 with a Cloudflare block page from the upstream forum. About and leaderboard requests succeed. No API or Cloudflare settings were changed; the existing conversation fallback remains. A forum administrator would need to investigate the blocking Cloudflare rule to restore this feed.
+
+## Mobile experience redesign
+
+The mobile layout now uses a centered hero without the particle canvas, followed by four vertical resource scenes. Typography, touch targets, and spacing have been adjusted throughout. Desktop keeps the existing animated horizontal story. These screenshots use the local sample-data preview at 390px; fixed navigation is hidden only in section captures.
+
+<img src="mobile-redesign-hero.png" alt="Centered mobile hero" width="390" />
+
+<img src="mobile-redesign-resources.png" alt="All four resource scenes in a vertical mobile layout" width="390" />
+
+<img src="mobile-redesign-footer.png" alt="Mobile footer with linked creator credit" width="390" />
+
+Older screenshots above document earlier iterations. Follow LOCAL-PREVIEW.md for the current routes and review steps.

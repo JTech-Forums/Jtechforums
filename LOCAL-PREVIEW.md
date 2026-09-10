@@ -22,31 +22,28 @@ The fonts and existing icon stylesheet load from external CDNs. Forum and instal
 
 ## What to review
 
-- The original JTech wordmark, seven continuously morphing particle silhouettes, and restrained blue/cyan lighting.
-- The large image reveal and four horizontal resource scenes. On desktop, scrolling down moves the scenes sideways while native CSS sticky positioning holds the section beneath the header. Scrolling past the final scene resumes vertical travel. Pagination also navigates between scenes.
-- The full-size guide-image dialog, original phone video, app icons, and locally saved copies of existing forum avatars.
-- The centered sticky FAQ introduction, searchable questions, discussion sorting, and app search.
-- The shared dark styling on guides, eGate, account forms, informational pages, and error pages.
-- Mobile navigation and horizontal swiping. Narrow screens use native horizontal scrolling instead of pinning.
-- Reduced-motion settings, which stop particle animation and decorative motion and use native scrolling for the resource scenes.
+- Desktop retains the original wordmark, seven morphing particle shapes, image reveal, and pinned horizontal resource story.
+- Phones and tablets below 1100px use a centered hero without the particle canvas and a vertical sequence of all four resource scenes. There is no horizontal carousel or resource pagination on these screens.
+- Mobile typography, spacing, touch targets, forum topics, team profiles, leaderboard, FAQ, and footer have been adjusted for narrow screens.
+- The guide-image dialog, eGate video, FAQ search, and mobile menu remain interactive. Motion respects reduced-motion preferences.
+- Navigation contains Home, eGate, About, and Contact. In-page guide links open the forum Guides category; the app-library link opens Android Apps. Local guides, apps, and sign-in pages have been removed.
+- The footer credit links @samsclub to the verified /u/sams-club forum profile and condvar.com to its website. The multiplication sign and both links stay together on mobile.
+- Feedback from visitors without a local authenticated session opens Contact.
 
 ## Preview data and integration boundaries
 
-- Forum statistics, discussion previews, and the leaderboard use the repository's sample data when mock mode is enabled, labeled in the UI. Sample topic links search the forum instead of opening fabricated topic IDs.
-- All three bundled guide articles can be read locally. Forum guides use the existing API when mock mode is disabled.
-- Without Firebase configuration, the app page displays the existing app assets with forum-search links. Downloads, account actions, uploads, moderation, and feedback submission require the configured services.
-- Account actions explain when Firebase is unavailable. The contact form does not send messages in local mock mode.
-- The existing configured Firebase and API integrations remain in the code. Production authentication, feedback writes, contact delivery, catalog uploads, and moderation have not been tested against live services and need maintainer verification before release.
-- Do not carry `VITE_FORUM_USE_MOCK=true` into a live build. Use the project's normal service configuration for an integration review.
+- Forum statistics, discussions, moderators, and the leaderboard use sample data when mock mode is enabled. Sample topic links search the forum instead of opening fabricated topic IDs.
+- External forum links still open the real forum. The contact form does not send messages in local mock mode.
+- Existing Firebase feedback and contact integrations remain. Production writes and delivery have not been tested against live services.
+- Do not carry VITE_FORUM_USE_MOCK=true into a live build. Use the normal service configuration for an integration review.
+- The conversation feed's upstream Cloudflare 403 issue is unchanged; see docs/review for the investigation.
 
 ## Validation performed
 
-- `npm run build` with the repository's locked dependencies; Vite reports the existing large-chunk advisory.
-- Eleven routes at desktop and mobile sizes: home, guides, guide detail, apps, eGate, about, contact, sign in, privacy, terms, and 404.
-- Discussion sorting, encoded forum search, FAQ filtering/expansion/empty states, mobile menu/Escape, and app filtering/empty states.
-- Horizontal story entry, forward/reverse travel, exit, pagination, route cleanup, and mobile/reduced-motion behavior.
-- Full-size image dialog and Escape dismissal.
-- Complete seven-shape particle cycle, centered FAQ positioning during scroll, stationary closing CTA, and reduced-motion stability.
-- Responsive widths from 320px to 1920px, with no horizontal page overflow or browser JavaScript errors in the checks performed.
+- Production build passes with the existing Vite bundle-size advisory.
+- Layouts at 320, 390, 430, 768, 1024, and 1440px: no horizontal page overflow; all mobile resource scenes fit vertically; desktop retains the particle canvas and pinned story.
+- Guide preview open/close, FAQ filtering, mobile menu/Escape, and reduced-motion behavior checked in Chrome.
+- Mobile About, eGate, Contact, Privacy, and Terms routes fit without overflow.
+- Confirmed removed-page links are absent, in-page resource links use the forum categories, footer links are correct, and visitor feedback opens Contact.
 
-No dependencies, deployment settings, or backend service configuration were changed. The preview images document appearance; they are not a hosted interactive preview.
+No dependencies, deployment settings, or backend service configuration were changed. The images document appearance; they are not a hosted interactive preview.

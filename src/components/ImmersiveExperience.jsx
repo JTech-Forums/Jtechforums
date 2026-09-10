@@ -1,3 +1,4 @@
+import { forumLinks } from "../lib/forumLinks";
 import TechParticleScene from "./TechParticleScene";
 import { useLayoutEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
@@ -8,45 +9,57 @@ gsap.registerPlugin(ScrollTrigger);
 
 export function ImmersiveHero() {
   const root = useRef(null);
+  const [showParticles, setShowParticles] = useState(
+    () => window.matchMedia("(min-width: 1100px)").matches,
+  );
+  useLayoutEffect(() => {
+    const desktop = window.matchMedia("(min-width: 1100px)");
+    const update = () => setShowParticles(desktop.matches);
+    desktop.addEventListener("change", update);
+    return () => desktop.removeEventListener("change", update);
+  }, []);
   useLayoutEffect(() => {
     const mm = gsap.matchMedia();
-    mm.add("(prefers-reduced-motion: no-preference)", () => {
-      const ctx = gsap.context(() => {
-        gsap.from(".hero-brand-logo", {
-          y: 40,
-          opacity: 0,
-          scale: 0.96,
-          duration: 1.15,
-          ease: "power3.out",
-          clearProps: "all",
-        });
-        gsap.from(".hero-caption, .hero-bottom", {
-          y: 20,
-          opacity: 0,
-          delay: 0.3,
-          duration: 0.85,
-          clearProps: "all",
-        });
-        gsap.to(".hero-brand", {
-          y: -40,
-          ease: "none",
-          scrollTrigger: {
-            trigger: root.current,
-            start: "20% top",
-            end: "bottom top",
-            scrub: 1,
-          },
-        });
-      }, root);
-      return () => ctx.revert();
-    });
+    mm.add(
+      "(min-width: 1100px) and (prefers-reduced-motion: no-preference)",
+      () => {
+        const ctx = gsap.context(() => {
+          gsap.from(".hero-brand-logo", {
+            y: 40,
+            opacity: 0,
+            scale: 0.96,
+            duration: 1.15,
+            ease: "power3.out",
+            clearProps: "all",
+          });
+          gsap.from(".hero-caption, .hero-bottom", {
+            y: 20,
+            opacity: 0,
+            delay: 0.3,
+            duration: 0.85,
+            clearProps: "all",
+          });
+          gsap.to(".hero-brand", {
+            y: -40,
+            ease: "none",
+            scrollTrigger: {
+              trigger: root.current,
+              start: "20% top",
+              end: "bottom top",
+              scrub: 1,
+            },
+          });
+        }, root);
+        return () => ctx.revert();
+      },
+    );
     return () => mm.revert();
   }, []);
   return (
     <section className="immersive-hero branded-hero" ref={root}>
       <div className="hero-blueprint" aria-hidden="true" />
       <div className="hero-ambient" aria-hidden="true" />
-      <TechParticleScene />
+      {showParticles && <TechParticleScene />}
       <div className="hero-brand">
         <h1>
           <img
@@ -95,7 +108,7 @@ const slides = [
       </>
     ),
     text: "Detailed walkthroughs for every device and setup. From flip phones to smartphones, we've got you covered.",
-    to: "/guides",
+    to: forumLinks.guides,
     action: "Explore the guides",
     type: "guides",
   },
@@ -110,7 +123,7 @@ const slides = [
       </>
     ),
     text: "Trusted, safe apps vetted by the community. No mystery APKs—just apps that work.",
-    to: "/apps",
+    to: forumLinks.apps,
     action: "Find your next app",
     type: "apps",
   },
@@ -182,6 +195,7 @@ function SlideVisual({ type }) {
         <span className="phone-speaker" />
         <video
           src="/img/qinf21.mp4"
+          poster="/img/home/egatesquare.png"
           muted
           loop
           playsInline
@@ -537,39 +551,42 @@ export function StoryBridge() {
   const root = useRef(null);
   useLayoutEffect(() => {
     const mm = gsap.matchMedia();
-    mm.add("(prefers-reduced-motion: no-preference)", () => {
-      const ctx = gsap.context(() => {
-        gsap.fromTo(
-          ".story-image",
-          { scale: 0.72, rotate: -5, opacity: 0.25 },
-          {
-            scale: 1.1,
-            rotate: 0,
-            opacity: 1,
-            ease: "none",
+    mm.add(
+      "(min-width: 1100px) and (prefers-reduced-motion: no-preference)",
+      () => {
+        const ctx = gsap.context(() => {
+          gsap.fromTo(
+            ".story-image",
+            { scale: 0.72, rotate: -5, opacity: 0.25 },
+            {
+              scale: 1.1,
+              rotate: 0,
+              opacity: 1,
+              ease: "none",
+              scrollTrigger: {
+                trigger: root.current,
+                start: "top 95%",
+                end: "bottom 70%",
+                scrub: 1,
+              },
+            },
+          );
+          gsap.from(".story-words span", {
+            y: 90,
+            opacity: 0,
+            stagger: 0.12,
+            duration: 1,
+            ease: "power3.out",
             scrollTrigger: {
               trigger: root.current,
-              start: "top 95%",
-              end: "bottom 70%",
-              scrub: 1,
+              start: "top 65%",
+              once: true,
             },
-          },
-        );
-        gsap.from(".story-words span", {
-          y: 90,
-          opacity: 0,
-          stagger: 0.12,
-          duration: 1,
-          ease: "power3.out",
-          scrollTrigger: {
-            trigger: root.current,
-            start: "top 65%",
-            once: true,
-          },
-        });
-      }, root);
-      return () => ctx.revert();
-    });
+          });
+        }, root);
+        return () => ctx.revert();
+      },
+    );
     return () => mm.revert();
   }, []);
   return (
