@@ -1,3 +1,4 @@
+import CommunityHonors from "./CommunityHonors";
 import {
   ImmersiveHero,
   ExperienceRail,
@@ -313,42 +314,13 @@ export default function HomeContent({
               </a>
             ))}
           </div>
-          {moderatorProfiles.length > 0 && (
-            <div className="moderators">
-              <h3>Our Moderators</h3>
-              {moderatorProfiles.map((p) => (
-                <a key={p.username} href={p.profileUrl}>
-                  {p.username}
-                </a>
-              ))}
-            </div>
-          )}
-          <div className="leaderboard">
-            <span>
-              Community champions{" "}
-              <small>{preview ? "Sample leaderboard" : "This month"}</small>
-            </span>
-            {leaderboardState.entries.map((p, i) => (
-              <a
-                key={p.id}
-                href={p.profileUrl}
-                target="_blank"
-                rel="noreferrer"
-              >
-                <span className="rank">0{i + 1}</span>
-                <strong>{p.username}</strong>
-                <span>{fmt(p.cheers)} points</span>
-              </a>
-            ))}
-            {leaderboardState.status === "error" && (
-              <a href={`${forum}/leaderboard`}>
-                View the community leaderboard{" "}
-                <Icon name="external" size={16} />
-              </a>
-            )}
-          </div>
         </div>
       </section>
+      <CommunityHonors
+        moderators={moderatorProfiles}
+        leaderboard={leaderboardState}
+        preview={preview}
+      />
       <section className="container feedback-section">
         <div className="section-top">
           <div>
