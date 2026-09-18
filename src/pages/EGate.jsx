@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import SectionHeading from '../components/SectionHeading';
 import Reveal from '../components/Reveal';
 
+import { asset } from "../lib/asset";
 const featureList = [
   {
     title: 'Factory reset & ADB protection',
@@ -35,7 +36,7 @@ const featureList = [
   },
 ];
 
-const demoVideoSrc = '/img/qinf21.mp4';
+const demoVideoSrc = asset("/img/qinf21.mp4");
 
 export default function EGate() {
   return (
@@ -340,7 +341,7 @@ function Highlights() {
               <div className="relative flex flex-1 items-center justify-center px-8 pb-10 pt-6">
                 <div className="w-full rounded-3xl border border-white/10 bg-slate-900 shadow-2xl">
                   <img
-                    src="/img/home/reseller.png"
+                    src={asset("/img/home/reseller.webp")}
                     alt="Reseller portal"
                     className="h-full w-full rounded-3xl object-cover"
                     referrerPolicy="no-referrer"
@@ -414,7 +415,7 @@ function Cta() {
             </div>
             <div className="rounded-3xl border border-white/10 bg-white/5 p-4">
               <img
-                src="/img/forum.png"
+                src={asset("/img/forum.webp")}
                 alt="Forum preview"
                 className="w-full rounded-2xl object-cover"
                 referrerPolicy="no-referrer"

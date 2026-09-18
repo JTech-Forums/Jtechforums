@@ -2010,7 +2010,7 @@ em {
   width: 96px;
   height: 38px;
 }
-.inner-page img[src="/img/phonegrid.png"] {
+.inner-page img[src$="img/phonegrid.webp"] {
   display: none;
 }
 .inner-page [class*="rounded-full"]:is(button, a) {

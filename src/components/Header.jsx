@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import Icon from "./Icon";
+import { asset } from "../lib/asset";
 const links = [
   ["Home", "/"],
   ["eGate", "/egate"],
@@ -27,7 +28,7 @@ export default function Header() {
       </a>
       <div className="header-inner">
         <Link className="brand" to="/" aria-label="JTech Forums home">
-          <img src="/img/whitelogo.png" alt="JTech" />
+          <img src={asset("/img/whitelogo.webp")} alt="JTech" />
           <span>FORUMS</span>
         </Link>
         <nav className="desktop-nav" aria-label="Main navigation">

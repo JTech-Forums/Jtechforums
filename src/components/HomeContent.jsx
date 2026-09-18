@@ -10,6 +10,7 @@ import { Link } from "react-router-dom";
 import Icon from "./Icon";
 import faqEntries from "../data/faqEntries";
 import { fetchForumApi, getForumWebBase } from "../lib/forumApi";
+import { asset } from "../lib/asset";
 const forum = getForumWebBase();
 function Avatar({ name, image }) {
   const [failed, setFailed] = useState(false);
@@ -303,7 +304,7 @@ export default function HomeContent({
               >
                 <Avatar
                   name={p.name}
-                  image={`/img/team/${p.handle.slice(1)}.png`}
+                  image={asset(`/img/team/${p.handle.slice(1)}.webp`)}
                 />
                 <div>
                   <h3>{p.name}</h3>

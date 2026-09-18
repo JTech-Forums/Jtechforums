@@ -1,13 +1,14 @@
 import { forumLinks } from "../lib/forumLinks";
 import { Link } from "react-router-dom";
 import Icon from "./Icon";
+import { asset } from "../lib/asset";
 export default function Footer() {
   return (
     <footer className="site-footer">
       <div className="container footer-top">
         <div>
           <Link to="/" className="brand">
-            <img src="/img/whitelogo.png" alt="JTech" />
+            <img src={asset("/img/whitelogo.webp")} alt="JTech" />
             <span>FORUMS</span>
           </Link>
           <p>Community-run tech & filtering intelligence.</p>

@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Icon from "./Icon";
+import { asset } from "../lib/asset";
 gsap.registerPlugin(ScrollTrigger);
 
 export function ImmersiveHero() {
@@ -64,7 +65,7 @@ export function ImmersiveHero() {
         <h1>
           <img
             className="hero-brand-logo"
-            src="/img/whitelogo.png"
+            src={asset("/img/whitelogo.webp")}
             alt="JTech Forums"
             width="860"
             height="250"
@@ -184,7 +185,7 @@ function SlideVisual({ type }) {
           "ColorNote",
         ].map((a, i) => (
           <div key={a} style={{ "--tile": i }}>
-            <img src={`/img/apps/${a}.png`} alt={a} loading="lazy" />
+            <img src={asset(`/img/apps/${a}.webp`)} alt={a} loading="lazy" />
           </div>
         ))}
       </div>
@@ -194,8 +195,8 @@ function SlideVisual({ type }) {
       <div className="rail-phone">
         <span className="phone-speaker" />
         <video
-          src="/img/qinf21.mp4"
-          poster="/img/home/egatesquare.png"
+          src={asset("/img/qinf21.mp4")}
+          poster={asset("/img/home/egatesquare.webp")}
           muted
           loop
           playsInline
@@ -253,7 +254,7 @@ function SlideVisual({ type }) {
             aria-label="Expand guide preview"
           >
             <img
-              src="/img/guides.png"
+              src={asset("/img/guides.webp")}
               alt="JTech forum guides including wireless debugging, blocking MMS, and understanding GSI packages"
               loading="lazy"
             />
@@ -286,7 +287,7 @@ function SlideVisual({ type }) {
               <Icon name="close" />
             </button>
           </div>
-          <img src="/img/guides.png" alt="Full-size JTech guides preview" />
+          <img src={asset("/img/guides.webp")} alt="Full-size JTech guides preview" />
         </dialog>
       )}
     </>
@@ -593,7 +594,7 @@ export function StoryBridge() {
     <section className="story-bridge" ref={root}>
       <div className="story-image">
         <img
-          src="/img/home/android.png"
+          src={asset("/img/home/android.webp")}
           alt="Android and code symbols from the JTech community"
           loading="lazy"
         />

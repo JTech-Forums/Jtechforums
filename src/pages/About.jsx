@@ -5,6 +5,7 @@ import GlassCard from '../components/GlassCard';
 import Reveal from '../components/Reveal';
 import { fetchForumApi } from '../lib/forumApi';
 
+import { asset } from "../lib/asset";
 const missionParagraphs = [
   "JTech's mission is to empower the Jewish community by providing the most precise, accurate, and up-to-date technology and filtering information.",
   'We obsess over accuracy, halachic sensitivity, and practical deployment so families, schools, and mechanchim can make confident choices without spending days in WhatsApp chats.',
@@ -107,7 +108,7 @@ export default function About() {
       {import.meta.env.VITE_FORUM_USE_MOCK === 'true' && <div className="container local-notice">Local preview · community statistics below are sample data.</div>}
       <section className="relative isolate overflow-hidden px-4 pb-14 pt-16 text-center sm:px-6 sm:pb-20">
         <div className="pointer-events-none absolute inset-0 -z-10 opacity-60">
-          <img src="/img/phonegrid.png" alt="" className="h-full w-full object-cover opacity-15" referrerPolicy="no-referrer" />
+          <img src={asset("/img/phonegrid.webp")} alt="" className="h-full w-full object-cover opacity-15" referrerPolicy="no-referrer" />
           <div className="absolute inset-0 bg-gradient-to-b from-slate-950/10 to-slate-950" />
         </div>
         <div className="mx-auto max-w-4xl space-y-6">
