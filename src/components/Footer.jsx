@@ -14,7 +14,7 @@ export default function Footer() {
           <p>Community-run tech & filtering intelligence.</p>
         </div>
         <a
-          href="https://forums.jtechforums.org"
+          href="https://jtechforums.org"
           target="_blank"
           rel="noreferrer"
           className="text-link"

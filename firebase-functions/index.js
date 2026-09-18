@@ -13,7 +13,7 @@ const rateLimit = require('express-rate-limit');
 
 const DISCOURSE_API_KEY = defineSecret('DISCOURSE_API_KEY');
 const CONTACT_SMTP_PASS = defineSecret('CONTACT_SMTP_PASS');
-const DEFAULT_DISCOURSE_API_BASE = 'https://forums.jtechforums.org';
+const DEFAULT_DISCOURSE_API_BASE = 'https://jtechforums.org';
 const DEFAULT_DISCOURSE_API_USERNAME = 'system';
 
 const buildForumBase = () =>

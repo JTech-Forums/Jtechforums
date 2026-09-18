@@ -53,7 +53,7 @@ export default function Header() {
         <div className="header-actions">
           <a
             className="button button-small"
-            href="https://forums.jtechforums.org"
+            href="https://jtechforums.org"
             target="_blank"
             rel="noreferrer"
           >

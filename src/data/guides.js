@@ -6,7 +6,7 @@
     summary:
       'Step-by-step instructions for installing, uninstalling, and launching Android apps on kosher flip phones using USB debugging, SD cards, or ADB.',
     heroNote: 'Need help? Join the forums where the community can walk you through every hiccup.',
-    heroLink: { label: 'Visit the forums', href: 'https://forums.jtechforums.org' },
+    heroLink: { label: 'Visit the forums', href: 'https://jtechforums.org' },
     sections: [
       {
         title: 'Installing Apps',
@@ -62,7 +62,7 @@
                 ],
                 link: {
                   label: 'ADB getting started',
-                  href: 'https://forums.jtechforums.org/t/what-is-adb-and-getting-started/1072',
+                  href: 'https://jtechforums.org/t/what-is-adb-and-getting-started/1072',
                 },
               },
             ],
@@ -74,7 +74,7 @@
             note: 'Replace appname.apk with the file you pushed (e.g., adb install -g waze.apk).',
             link: {
               label: 'ADB reference',
-              href: 'https://forums.jtechforums.org/t/what-is-adb-and-getting-started/1072',
+              href: 'https://jtechforums.org/t/what-is-adb-and-getting-started/1072',
             },
           },
         ],
@@ -96,7 +96,7 @@
             note: 'Run `pm list packages | grep app_name` to discover the exact package ID before uninstalling.',
             link: {
               label: 'ADB getting started',
-              href: 'https://forums.jtechforums.org/t/what-is-adb-and-getting-started/1072',
+              href: 'https://jtechforums.org/t/what-is-adb-and-getting-started/1072',
             },
           },
         ],
@@ -121,7 +121,7 @@
       {
         title: 'Go further',
         description: 'Check the Android Guides category on the forum for fresh playbooks and troubleshooting threads.',
-        link: { label: 'Android Guides forum', href: 'https://forums.jtechforums.org/c/android-guides/15' },
+        link: { label: 'Android Guides forum', href: 'https://jtechforums.org/c/android-guides/15' },
       },
     ],
   },
@@ -209,7 +209,7 @@
       {
         title: 'Go further',
         description: 'Browse the Android Guides category for fresh community discoveries and safer automation.',
-        link: { label: 'Android Guides forum', href: 'https://forums.jtechforums.org/c/android-guides/15' },
+        link: { label: 'Android Guides forum', href: 'https://jtechforums.org/c/android-guides/15' },
       },
     ],
   },
@@ -220,7 +220,7 @@
     summary:
       'Run Android Auto on the CAT S22 Flip by flashing the community Magisk module and adjusting permissions—even though Android Go normally blocks it.',
     heroNote: 'Magisk root is required. Remove Android Auto updates before removing the module to avoid bootloops.',
-    heroLink: { label: 'Join the forums for root help', href: 'https://forums.jtechforums.org' },
+    heroLink: { label: 'Join the forums for root help', href: 'https://jtechforums.org' },
     sections: [
       {
         title: 'Requirements',
@@ -258,7 +258,7 @@
       {
         title: 'Go further',
         description: 'More Android automation tricks live inside the Android Guides forum category.',
-        link: { label: 'Android Guides forum', href: 'https://forums.jtechforums.org/c/android-guides/15' },
+        link: { label: 'Android Guides forum', href: 'https://jtechforums.org/c/android-guides/15' },
       },
     ],
   },

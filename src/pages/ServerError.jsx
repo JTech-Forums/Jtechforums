@@ -10,7 +10,7 @@ export default function ServerError() {
         <Link to="/" className="rounded-full bg-sky-500 px-5 py-3 text-sm font-semibold text-slate-950">
           Go home
         </Link>
-        <a href="https://forums.jtechforums.org" target="_blank" rel="noopener" className="rounded-full border border-white/30 px-5 py-3 text-sm font-semibold text-white">
+        <a href="https://jtechforums.org" target="_blank" rel="noopener" className="rounded-full border border-white/30 px-5 py-3 text-sm font-semibold text-white">
           Report on forum
         </a>
       </div>

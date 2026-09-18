@@ -14,7 +14,7 @@ const fallbackBase = import.meta.env.DEV ? defaultDevRemoteBase : '/api';
 const resolvedBase =
   import.meta.env.DEV && (isRelativeBase || !trimmedBase) ? defaultDevRemoteBase : trimmedBase;
 const forumApiBase = normalizeBase(resolvedBase, fallbackBase);
-const forumWebBase = normalizeBase(import.meta.env.VITE_FORUM_URL, 'https://forums.jtechforums.org');
+const forumWebBase = normalizeBase(import.meta.env.VITE_FORUM_URL, 'https://jtechforums.org');
 const forumMockMode = (import.meta.env.VITE_FORUM_USE_MOCK || '').toLowerCase();
 const forceMock =
   forumMockMode === 'true' ||

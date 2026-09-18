@@ -74,7 +74,7 @@ const termsSections = [
     list: [
       'Email: admin@jtechforums.org',
       'Postal mail: JTech Forums LLC, 12 Shefa Chaim Ave, Lakewood, NJ 08701, United States',
-      'Forum: https://forums.jtechforums.org',
+      'Forum: https://jtechforums.org',
     ],
   },
 ];

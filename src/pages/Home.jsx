@@ -29,24 +29,24 @@ const adminProfiles = [
     handle: "@TripleU",
     role: "Forums Owner & Maintainer",
     avatar:
-      "https://forums.jtechforums.org/user_avatar/forums.jtechforums.org/tripleu/144/488_2.png",
-    profileUrl: "https://forums.jtechforums.org/u/tripleu",
+      "https://jtechforums.org/user_avatar/forums.jtechforums.org/tripleu/144/488_2.png",
+    profileUrl: "https://jtechforums.org/u/tripleu",
   },
   {
     name: "Avrumi Sternheim",
     handle: "@ars18",
     role: "Forums Admin & Moderator",
     avatar:
-      "https://forums.jtechforums.org/user_avatar/forums.jtechforums.org/ars18/144/2336_2.png",
-    profileUrl: "https://forums.jtechforums.org/u/ars18",
+      "https://jtechforums.org/user_avatar/forums.jtechforums.org/ars18/144/2336_2.png",
+    profileUrl: "https://jtechforums.org/u/ars18",
   },
   {
     name: "Offline Software Solutions",
     handle: "@flipadmin",
     role: "Forum Founder & Developer",
     avatar:
-      "https://forums.jtechforums.org/user_avatar/forums.jtechforums.org/flipadmin/144/2891_2.png",
-    profileUrl: "https://forums.jtechforums.org/u/flipadmin",
+      "https://jtechforums.org/user_avatar/forums.jtechforums.org/flipadmin/144/2891_2.png",
+    profileUrl: "https://jtechforums.org/u/flipadmin",
   },
 ];
 

@@ -17,7 +17,7 @@ const offerings = [
     title: 'Forum intelligence',
     description:
       '2,000+ public threads covering eGate releases, Qin F21 builds, CAT S22 tweaks, and halachic guardrails. Every answer is vetted before it’s pinned.',
-    link: { label: 'Visit forum', href: 'https://forums.jtechforums.org' },
+    link: { label: 'Visit forum', href: 'https://jtechforums.org' },
   },
   {
     icon: 'fa-book-open',
@@ -232,7 +232,7 @@ export default function About() {
           </p>
           <div className="flex flex-col gap-4 sm:flex-row sm:flex-wrap sm:justify-center">
             <a
-              href="https://forums.jtechforums.org"
+              href="https://jtechforums.org"
               target="_blank"
               rel="noopener"
               className="inline-flex items-center justify-center rounded-full bg-white px-6 py-3 text-base font-semibold text-slate-900"

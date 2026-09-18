@@ -92,7 +92,7 @@ function Hero() {
               Buy a license
             </a>
             <a
-              href="https://forums.jtechforums.org/t/what-is-egate-software/235"
+              href="https://jtechforums.org/t/what-is-egate-software/235"
               target="_blank"
               rel="noopener"
               className="inline-flex items-center gap-2 rounded-full border border-white/30 px-6 py-3 text-sm font-semibold text-white"
@@ -401,7 +401,7 @@ function Cta() {
               </p>
               <div className="mt-8 flex flex-wrap gap-4">
                 <a
-                  href="https://forums.jtechforums.org"
+                  href="https://jtechforums.org"
                   target="_blank"
                   rel="noopener"
                   className="rounded-full bg-sky-500 px-6 py-3 text-sm font-semibold text-slate-950"

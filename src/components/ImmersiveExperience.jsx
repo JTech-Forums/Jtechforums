@@ -81,7 +81,7 @@ export function ImmersiveHero() {
         <span>Built by the community, for the community.</span>
         <a
           className="button"
-          href="https://forums.jtechforums.org"
+          href="https://jtechforums.org"
           target="_blank"
           rel="noreferrer"
         >
